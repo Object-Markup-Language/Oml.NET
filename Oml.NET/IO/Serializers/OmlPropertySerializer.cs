@@ -29,6 +29,7 @@ namespace Oml.NET.IO.Serializers
             };
 
             _arraySerializer = new OmlPropertyArrayValueSerializer();
+            _tableSerializer = new OmlPropertyTableValueSerializer();
             //_fallbackSerializer = new OmlPropertyFallbackValueSerializer();
         }
 

@@ -7,12 +7,15 @@ namespace Oml.NET
     /// <inheritdoc cref="IOmlHeader"/>
     public class OmlHeader : OmlObject, IOmlHeader
     {
-        private readonly IOmlTable _backingTable;
+        private readonly IOmlObject _backingTable;
 
         public OmlHeader()
         {
             _backingTable = new OmlTable();
         }
+
+        /// <inheritdoc/>
+        public override OmlObjectType OmlType => OmlObjectType.Header;
 
         /// <inheritdoc/>
         public IOmlProperty Get(string key) => _backingTable.Get(key);

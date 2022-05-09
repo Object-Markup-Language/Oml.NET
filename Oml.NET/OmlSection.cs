@@ -12,24 +12,10 @@ namespace Oml.NET
             _text = text;
         }
 
+        /// <inheritdoc/>
+        public override OmlObjectType OmlType => OmlObjectType.Comment;
+
         public string GetText() => _text;
         public void SetText(string text) => _text = text;
-
-        /*public string Serialize(IOmlDocument document)
-        {
-            OmlVerifier.VerifySectionText(_text);
-
-            return $"[{_text}]";
-        }
-        
-        public void Parse(IOmlDocument document, string text)
-        {
-            text = text.Trim();
-
-            OmlVerifier.VerifySectionStructure(text);
-            OmlVerifier.VerifySectionText(text);
-
-            _text = text;
-        }*/
     }
 }

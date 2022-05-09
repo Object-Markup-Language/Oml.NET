@@ -1,23 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace Oml.NET.Base
 {
     /// <summary>
-    /// A collection which can store <see cref="IOmlProperty"/>s.
+    /// Represents a OML table.
     /// </summary>
-    public interface IOmlTable : IEnumerable<KeyValuePair<string, IOmlProperty>>
+    public interface IOmlTable : IEnumerable, IEnumerable<IOmlObject>
     {
-        public IOmlProperty Get(string key);
-        public void Set(string key, object value);
+        public IOmlObject Get(int key);
+        public void Set(int key, IOmlObject obj);
 
-        public void Add(IOmlProperty property);
-        public void Remove(string key);
+        public void Add(IOmlObject property);
+        public void Remove(int key);
 
-        public bool TryGet(string key, out IOmlProperty value);
+        public bool TryGet(int key, out IOmlObject value);
 
-        public IOmlProperty this[string key] { get => Get(key); set => Set(key, value.Value); }
-
-        public T GetObjectValue<T>(string key) => Get(key).GetValue<T>();
-        public void SetObjectValue(string key, object value) => Get(key).Value = value;
+        public IOmlObject this[int key] { get => Get(key); set => Set(key, value); }
     }
 }

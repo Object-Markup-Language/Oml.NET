@@ -5,7 +5,7 @@ namespace Oml.NET.Base
     /// <summary>
     /// Represents a header in an OML file; a line of text specifying how the document should be parsed.
     /// </summary>
-    public interface IOmlHeader : IOmlTable, IOmlObject
+    public interface IOmlHeader : IOmlObject, IOmlObject
     {
         public const string VersionKey = "Version";
 

@@ -5,6 +5,8 @@
     /// </summary>
     public interface IOmlObject
     {
+        public OmlObjectType OmlType { get; }
+
         public IOmlObjectFormattingInfo GetFormattingInfo();
         public void SetFormattingInfo(IOmlObjectFormattingInfo formattingInfo);
 

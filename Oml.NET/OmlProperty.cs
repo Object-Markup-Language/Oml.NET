@@ -15,6 +15,9 @@ namespace Oml.NET
         }
 
         /// <inheritdoc/>
+        public override OmlObjectType OmlType => OmlObjectType.Comment;
+
+        /// <inheritdoc/>
         public string GetKey() => _key;
         /// <inheritdoc/>
         public object GetValue() => _value;

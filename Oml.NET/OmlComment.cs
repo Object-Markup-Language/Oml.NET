@@ -12,6 +12,9 @@ namespace Oml.NET
             _text = text;
         }
 
+        /// <inheritdoc/>
+        public override OmlObjectType OmlType => OmlObjectType.Comment;
+
         public string GetText() => _text;
         public void SetText(string text) => _text = text;
     }

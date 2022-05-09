@@ -22,6 +22,14 @@ namespace Oml.NET.IO
             };
         }
 
+        /// <summary>
+        /// Serializers the specified <see cref="IOmlObject"/> with the automatically selected default <see cref="IOmlObjectSerializer"/>.
+        /// </summary>
+        /// <param name="type">The type of the serialized object.</param>
+        /// <param name="settings"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        /// <exception cref="InvalidOperationException"></exception>
         public static string Serialize(OmlObjectType type, IOmlDocumentFormattingSettings settings, IOmlObject obj) => !_serializers.TryGetValue(type, out IOmlObjectSerializer serializer)
                 ? throw new InvalidOperationException($"No serializer for type {type}. This should never happen.")
                 : serializer.Serialize(settings, obj);

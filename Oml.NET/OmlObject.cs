@@ -3,7 +3,7 @@
 namespace Oml.NET
 {
     /// <inheritdoc cref="IOmlObject"/>
-    public class OmlObject : IOmlObject
+    public abstract class OmlObject : IOmlObject
     {
         private IOmlObjectFormattingInfo _formattingInfo;
 
@@ -16,6 +16,9 @@ namespace Oml.NET
             _formattingInfo = formattingInfo ?? new EmptyOmlObjectFormattingInfo();
         }
 
+        /// <inheritdoc/>
+        public abstract OmlObjectType OmlType { get; }
+        
         /// <inheritdoc/>
         public IOmlObjectFormattingInfo GetFormattingInfo() => _formattingInfo;
         /// <inheritdoc/>

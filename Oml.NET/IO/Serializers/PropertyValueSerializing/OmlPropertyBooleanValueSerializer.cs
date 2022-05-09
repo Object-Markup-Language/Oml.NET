@@ -12,7 +12,7 @@ namespace Oml.NET.IO.Serializers.PropertyValueSerializing
         public string Serialize(IOmlPropertyValueFormattingInfo formattingInfo, object value) => value is bool flag
             ? formattingInfo is IOmlPropertyBooleanValueFormattingInfo boolFormat
                 ? flag.ToString()
-                : throw new OmlSerializationException("Attempted to serializer boolean with non-boolean formatting info: " + formattingInfo.GetType().Name)
+                : throw new OmlSerializationException("Attempted to serialize boolean with non-boolean formatting info: " + formattingInfo.GetType().Name)
             : throw new OmlSerializationException("Attempted to serialize non-boolean value with boolean serializer: " + value.GetType().Name);
     }
 }
